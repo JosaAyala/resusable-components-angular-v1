@@ -2,14 +2,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material/form-field';
+import { FilterItem } from './filter-item';
 
-export interface FilterItem {
-  filterId: string,
-  type: 'string' | 'number' | 'date' | 'boolean',
-  label?: string,
-  value?: boolean |string | number | Date | any,
-  onFilterChange: EventEmitter<any> | any,
-}
+
 @Component({
   selector: 'app-filters-component',
   templateUrl: './filters-component.component.html',

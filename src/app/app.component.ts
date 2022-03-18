@@ -1,10 +1,5 @@
 import { Component } from '@angular/core'
-import { FilterItem } from './Components/filters-component/filters-component.component'
-
-interface TaskItem {
-  id: number
-  description: string
-}
+import { FilterItem } from './Components/filters-component/filter-item'
 
 @Component({
   selector: 'app-root',
@@ -57,17 +52,5 @@ export class AppComponent {
       (item) => item.filterId === filterId,
     )
     this.filtersList[indexItem].value = newValue
-  }
-
-  task: string
-
-  todolist: TaskItem[] = [
-    { id: 1, description: 'test' },
-    { id: 2, description: 'test' },
-  ]
-
-  removeItem(id: number) {
-    window.alert(id)
-    //this.todolist = this.todolist.filter(x => x.id!== id);
   }
 }
