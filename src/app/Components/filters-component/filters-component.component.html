@@ -1,0 +1,23 @@
+<div *ngFor="let filter of filtersList" class="filters-container">
+    <mat-form-field appearance="fill" *ngIf="filter.type === 'string'">
+      <mat-label>{{ filter.label }}</mat-label>
+      <input matInput type="text" [value]="" [name]="'filter.label'" (keyup)="onChangeFilter($event, filter)" />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" *ngIf="filter.type === 'number'">
+      <mat-label>{{ filter.label }}</mat-label>
+      <input matInput type="number" [value]="" [name]="'filter.label'" (keyup)="onChangeFilter($event, filter)" />
+    </mat-form-field>
+    <mat-checkbox
+      [checked]="filter.value"
+      (change)="onChangeFilter($event, filter)"
+      *ngIf="filter.type === 'boolean'"
+      >{{filter.label}}</mat-checkbox
+    >
+    <mat-form-field appearance="fill" *ngIf="filter.type === 'date'">
+      <mat-label>{{filter.label}}</mat-label>
+      <input matInput [matDatepicker]="picker" [value]="filter.value" (dateChange)="onChangeFilter($event, filter)" >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>
