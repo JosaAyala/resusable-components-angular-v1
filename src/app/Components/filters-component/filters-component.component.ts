@@ -42,20 +42,4 @@ export class FiltersComponentComponent implements OnInit {
     }
   }
 
-  // onKeyPressStringFilter(eventText: any, event: any){
-  //   this.filterEvent.emit(event(textFilter));
-  // }
-
-  // onKeyPressNumberFilter(numberValueFilter: any){
-  //   this.filterEvent.emit(numberValueFilter);
-  // }
-
-  // onKeyPressDateFilter(dateFilter: any){
-  //   this.filterEvent.emit(dateFilter);
-  // }
-
-  // onKeyPressBooleanFilter(boolValueFilter: any){
-  //   this.filterEvent.emit(boolValueFilter);
-  // }
-
 }
